@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6x6 Checker Board Game - Human vs AI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>6x6 Checker Board Game</h1>
+            <p>Human vs AI</p>
+        </header>
+
+        <div class="game-info">
+            <div class="player-info">
+                <div class="player human-player">
+                    <h2>Player (Red)</h2>
+                    <p>Score: <span id="humanScore">0</span></p>
+                    <p id="humanStatus">Your Turn</p>
+                </div>
+                <div class="player ai-player">
+                    <h2>AI (Blue)</h2>
+                    <p>Score: <span id="aiScore">0</span></p>
+                    <p id="aiStatus">Waiting...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-board-container">
+            <div id="gameBoard" class="game-board"></div>
+        </div>
+
+        <div class="controls">
+            <button id="newGameBtn" class="btn btn-primary">New Game</button>
+            <button id="resetBtn" class="btn btn-secondary">Reset Score</button>
+            <div class="difficulty">
+                <label for="difficulty">AI Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="game-log">
+            <h3>Game Log</h3>
+            <div id="gameLog" class="log-content"></div>
+            <button id="clearLogBtn" class="btn btn-small">Clear Log</button>
+        </div>
+    </div>
+
+    <script src="ai.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
