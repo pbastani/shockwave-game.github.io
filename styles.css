@@ -1,56 +1,86 @@
-:root {
-  --background-color: rgba(255, 255, 255, 0.5);
-  --text-color: #333;
-  --primary-color: #007bff;
-  --secondary-color: #6c757d;
-  --shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  --transition-speed: 0.3s;
-}
-
-body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
-  backdrop-filter: blur(10px);
-  color: var(--text-color);
-  transition: background var(--transition-speed);
-}
-
-h1, h2, h3, h4 {
-  text-shadow: var(--shadow);
-  margin: 0;
-}
-
-h1 {
-  font-size: 2.5em;
-  color: var(--primary-color);
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.card {
-  background: var(--background-color);
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-  padding: 20px;
-  transition: box-shadow var(--transition-speed);
+.header {
+    font-size: 2rem;
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-.card:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+.player-cards {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
 }
 
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2em;
-  }
-  .container {
+.player-card {
+    width: 150px;
     padding: 10px;
-  }
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+.player-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin: 20px 0;
+}
+
+.control-panel {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #4e54c8, #8f94fb);
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background: linear-gradient(90deg, #8f94fb, #4e54c8);
+    transform: translateY(-2px);
+}
+
+.game-log {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    .player-card {
+        width: 100%;
+    }
+    .button {
+        width: 100%;
+    }
 }
