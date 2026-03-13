@@ -1,0 +1,62 @@
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 5px;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    background: linear-gradient(135deg, #f5f5f5, #c5c5c5);
+}
+
+.cell {
+    background: #ffffff;
+    border: 2px solid #cccccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    transition: background-color 0.3s;
+}
+
+.cell.human {
+    background-color: red;
+}
+
+.cell.ai {
+    background-color: blue;
+}
+
+.cell.valid-move {
+    background-color: #dff0d8;
+}
+
+.game-controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.player-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+.game-log {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+    .game-board {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .cell {
+        height: 70px;
+    }
+}
