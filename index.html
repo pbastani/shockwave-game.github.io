@@ -4,37 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shockwave Game</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-        <h1>Welcome to the Shockwave Game!</h1>
+        <div class="logo">
+            <img src="logo.png" alt="Shockwave Game Logo">
+        </div>
     </header>
     <main>
-        <section>
-            <h2>How to Play</h2>
-            <p>Get ready for an exciting adventure!</p>
-            <button aria-label="Start Game">Start Game <i class="fas fa-play"></i></button>
+        <section id="player-cards">
+            <div class="player human">
+                <h2>Human Player</h2>
+                <p>Score: <span id="human-score">0</span></p>
+            </div>
+            <div class="player ai">
+                <h2>AI Player</h2>
+                <p>Score: <span id="ai-score">0</span></p>
+            </div>
         </section>
-        <section>
-            <h2>Features</h2>
-            <ul>
-                <li>Dynamic UI <i class="fas fa-thumbs-up"></i></li>
-                <li>Engaging Gameplay <i class="fas fa-gamepad"></i></li>
-                <li>High-Quality Graphics <i class="fas fa-image"></i></li>
-            </ul>
+        <section id="game-board">
+            <div class="grid-container">
+                <!-- Game cells will be generated here -->
+            </div>
+        </section>
+        <section id="controls">
+            <button id="start-button"><i class="fas fa-play"></i> Start</button>
+            <button id="reset-button"><i class="fas fa-undo"></i> Reset</button>
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </section>
+        <section id="game-log">
+            <h3>Game Log</h3>
+            <ul id="log"></ul>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2026 Shockwave Game. All Rights Reserved.</p>
-    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
